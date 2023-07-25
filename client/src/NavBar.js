@@ -6,10 +6,9 @@ import { Link } from "react-router-dom"
 const NavBar = () => {
     return (
         <div>
-            <h1>"Hello"</h1>
-            <Link>Home</Link>
-            <Link>Booking</Link>
-            <Link>Reviews</Link>
+            <Link className='navLink' to="/">Home</Link>
+            <Link className='navLink' to="/packages">Package</Link>
+            <Link className='navLink' to="/reviews">Reviews</Link>
         </div>
     )
 }
