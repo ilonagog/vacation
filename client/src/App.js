@@ -5,8 +5,18 @@ import Packages from './Packages';
 import Package from './Package';
 import Reviews from './Reviews';
 import { Route, Routes } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+
 
 function App() {
+  const [places, setPlaces] = useState([])
+
+  useEffect(() => {
+    fetch("/places")
+      .then(resp => resp.json())
+      .then(console.log(places))
+  })
   return (
     <div className="App">
       <NavBar />
