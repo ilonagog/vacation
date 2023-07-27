@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 2023_07_25_172543) do
 
   create_table "places", force: :cascade do |t|
     t.string "name"
+    t.string "location"
     t.string "image"
     t.text "description"
     t.integer "price"
-    t.integer "day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
