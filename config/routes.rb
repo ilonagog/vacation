@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # resources :reviews, only: [:index, :show] do
   #   resources :reviews
   # end
-  resources :places, only: [:index, :show]
+  resources :places, only: [:index, :show, :create]
     
   # resources :users
   # Routing logic: fallback requests for React Router.

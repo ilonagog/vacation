@@ -8,4 +8,8 @@ class PlacesController < ApplicationController
         place = Place.find_by(id: params[:id])
         render json: place
     end
+
+    def create
+        byebug
+    end
 end

@@ -15,7 +15,10 @@ function App() {
   useEffect(() => {
     fetch("/places ")
       .then(resp => resp.json())
-      .then(data => { console.log(data) })
+      .then(data => {
+        console.log(data)
+        setPlaces(data)
+      })
   }, [])
   return (
     <div className="App">
