@@ -6,6 +6,7 @@ import Place from './Place';
 import Reviews from './Reviews';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { UserProvider } from "./context/user";
 
 
 
@@ -22,13 +23,16 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/places" element={<Places places={places} setPlaces={setPlaces} />} />
-        <Route exact path="/places/:id" element={<Place />} />
-        <Route exact path="/reviews" element={<Reviews />} />
-      </Routes>
+      <UserProvider>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/places" element={<Places places={places} setPlaces={setPlaces} />} />
+          <Route exact path="/places/:id" element={<Place />} />
+          <Route exact path="/reviews" element={<Reviews />} />
+        </Routes>
+      </UserProvider>
+
     </div>
   );
 }
