@@ -11,6 +11,7 @@ const PlaceForm = ({ addPlace }) => {
     })
 
     const handleChange = (e) => {
+        console.log(e.target.value)
         setInput({
             ...input,
             [e.target.name]: e.target.value

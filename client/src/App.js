@@ -25,7 +25,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/places" element={<Places places={places} />} />
+        <Route exact path="/places" element={<Places places={places} setPlaces={setPlaces} />} />
         <Route exact path="/places/:id" element={<Place />} />
         <Route exact path="/reviews" element={<Reviews />} />
       </Routes>

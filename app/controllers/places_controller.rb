@@ -10,6 +10,13 @@ class PlacesController < ApplicationController
     end
 
     def create
-        byebug
+      place = Place.create(place_params)
+      render json: place
+    end
+
+    private
+
+    def place_params
+        params.require(:place).permit(:name, :location, :image, :description,:price)
     end
 end

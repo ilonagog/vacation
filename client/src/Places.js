@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PlaceCard from './PlaceCard'
 import PlaceForm from './PlaceForm'
+import Button from 'react-bootstrap/Button';
 
 
 const Packages = ({ places, setPlaces }) => {
@@ -36,7 +37,8 @@ const Packages = ({ places, setPlaces }) => {
 
     return (
         <div>
-            <button className='button' onClick={handleClick}>Add New Property</button>
+            <Button variant="outline-success" onClick={handleClick}>Add New Property</Button>{' '}
+            <br />
             <br />
             {viewAddForm ?
                 <PlaceForm addPlace={addPlace} />
