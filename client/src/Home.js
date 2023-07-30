@@ -3,7 +3,7 @@ import { UserContext } from './context/user'
 
 const Home = () => {
   const { user } = useContext(UserContext)
-  if (!user) {
+  if (!user || user.error) {
     return (<h3>Please Login or Signup</h3>)
   } else {
     return (
