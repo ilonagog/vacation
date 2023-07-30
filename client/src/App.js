@@ -7,6 +7,9 @@ import Reviews from './Reviews';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { UserProvider } from "./context/user";
+import Login from './Login';
+import Signup from './Signup';
+
 
 
 
@@ -30,6 +33,9 @@ function App() {
           <Route exact path="/places" element={<Places places={places} setPlaces={setPlaces} />} />
           <Route exact path="/places/:id" element={<Place />} />
           <Route exact path="/reviews" element={<Reviews />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/login" element={<Login />} />
+
         </Routes>
       </UserProvider>
 
