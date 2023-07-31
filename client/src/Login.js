@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react'
 import { UserContext } from './context/user'
+//import Error from './Error'
 
 const Login = () => {
-    const [name, setName] = useState("")
+    const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
     const { Login } = useContext(UserContext)
 
     const handleSubmit = (e) => {
@@ -14,9 +16,10 @@ const Login = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <label>User Name:</label>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
+                <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)}></input>
                 <label>User Password:</label>
                 <input type="text" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                <input type="submit" />
             </form>
 
         </div>

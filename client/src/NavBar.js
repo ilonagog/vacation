@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 // import { Link } from "react-router-dom"
 
@@ -22,9 +22,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { MdReorder } from "react-icons/md";
+import { UserContext } from './context/user';
+
 
 
 const NavBar = () => {
+
+    const { user, logout } = useContext(UserContext)
+
+    if (user) {
+
+    }
     return (
         <Navbar expand="lg" className="bg-body-tertiary ">
             <Container>
