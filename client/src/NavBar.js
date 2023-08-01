@@ -23,14 +23,34 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { MdReorder } from "react-icons/md";
 import { UserContext } from './context/user';
+import { useNavigate } from 'react-router-dom'
 
 
 
 const NavBar = () => {
 
-    const { user, logout } = useContext(UserContext)
+    const { user, logout, loggedIn } = useContext(UserContext)
+    const navigate = useNavigate()
 
-    if (user) {
+    const logoutUser = () => {
+        fetch('/logout', {
+            method: "DELETE",
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(() => {
+                logout()
+                navigate('/')
+            })
+    }
+
+    if (loggedIn) {
+        return (
+            <div>
+                <h3>Welcome {user.username}</h3>
+                <button onClick={logoutUser}>Logout</button>
+                <br />
+            </div>
+        )
 
     }
     return (
@@ -43,10 +63,10 @@ const NavBar = () => {
                         <Nav.Link href="/places">Places</Nav.Link>
                         <Nav.Link href="/reviews">Reviews</Nav.Link>
                         <NavDropdown title={MdReorder} id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.3">Sign Up</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.1">Log In</NavDropdown.Item>
+                            <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+                            <NavDropdown.Item href="/login">Log In</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
+                            <NavDropdown.Item href="/contact">
                                 Contact Us
                             </NavDropdown.Item>
                         </NavDropdown>
